@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#   Script for updating dwm's status bar
+
+append() {
+    name="${name:+$name} $1"
+}
+
+time=$(LC_TIME=pt_BR.UTF8 date '+%x %X')
+weekday_name=$(LC_TIME=pt_BR.UTF8 date '+%a')
+weekday_name=${weekday_name^}
+
+volume=$(pamixer --get-volume-human)
+
+batcap=$(cat /sys/class/power_supply/BAT0/capacity)
+batstat=$(cat /sys/class/power_supply/BAT0/status)
+
+append " ${volume}"
+append "│"
+append " $batstat $batcap%"
+append "│"
+append "$time $weekday_name"
+
+xsetroot -name "$name "
+

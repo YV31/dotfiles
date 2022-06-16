@@ -1,0 +1,12 @@
+#!/bin/bash
+
+embed=$(xprop -root _NET_ACTIVE_WINDOW)
+embed="${embed##* }"
+
+# Some what stolen from dmenu_path
+cachedir="${XDG_CACHE_HOME:-"$HOME/.cache"}"
+cache="$cachedir/dirmenu_cache"
+[ ! -e "$cachedir" ] && mkdir -p "$cachedir"
+
+[ $1 = "-u" ] && find ~ -type d > $cache
+[ $1 = "-u" ] || xdotool type  $(cat $cache | dmenu -l 8 -w $embed)

@@ -1,0 +1,42 @@
+#!/bin/bash
+
+RESET=$(tput sgr0)
+BOLD=$(tput bold)
+
+FG_BLACK=$(tput setaf 0)
+FG_RED=$(tput setaf 1)
+FG_GREEN=$(tput setaf 2)
+FG_YELLOW=$(tput setaf 3)
+FG_BLUE=$(tput setaf 4)
+FG_MAGENTA=$(tput setaf 5)
+FG_CYAN=$(tput setaf 6)
+FG_WHITE=$(tput setaf 7)
+
+BG_BLACK=$(tput setab 0)
+BG_RED=$(tput setab 1)
+BG_GREEN=$(tput setab 2)
+BG_YELLOW=$(tput setab 3)
+BG_BLUE=$(tput setab 4)
+BG_MAGENTA=$(tput setab 5)
+BG_CYAN=$(tput setab 6)
+BG_WHITE=$(tput setab 7)
+
+FGI_BLACK=$(tput setaf 8)
+FGI_RED=$(tput setaf 9)
+FGI_WHITE=$(tput setaf 15)
+FGI_GREEN=$(tput setaf 10)
+FGI_YELLOW=$(tput setaf 11)
+FGI_BLUE=$(tput setaf 12)
+FGI_MAGENTA=$(tput setaf 13)
+FGI_CYAN=$(tput setaf 14)
+
+BGI_BLACK=$(tput setab 8)
+BGI_RED=$(tput setab 9)
+BGI_WHITE=$(tput setab 15)
+BGI_GREEN=$(tput setab 10)
+BGI_YELLOW=$(tput setab 11)
+BGI_BLUE=$(tput setab 12)
+BGI_MAGENTA=$(tput setab 13)
+BGI_CYAN=$(tput setab 14)
+
+export PS1='\[$BOLD$FG_RED\][\[$FG_YELLOW\]\u\[$FG_CYAN\]@\[$FG_BLUE\]\h \[$FG_MAGENTA\]\W\[$FG_RED\]]\[$RESET\]$ '
