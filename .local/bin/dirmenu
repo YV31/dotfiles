@@ -1,5 +1,7 @@
 #!/bin/bash
 
+exclude="\.git|\.librewolf|\.cache|\.ssh"
+
 embed=$(xprop -root _NET_ACTIVE_WINDOW)
 embed="${embed##* }"
 
@@ -8,5 +10,5 @@ cachedir="${XDG_CACHE_HOME:-"$HOME/.cache"}"
 cache="$cachedir/dirmenu_cache"
 [ ! -e "$cachedir" ] && mkdir -p "$cachedir"
 
-[ $1 = "-u" ] && find ~ -type d > $cache
-[ $1 = "-u" ] || xdotool type  $(cat $cache | dmenu -l 8 -w $embed)
+[ $1 = "-u" ] && find ~ -type d | sed "s|^$HOME|~|" | grep -vE $exclude > $cache
+[ $1 = "-u" ] || xdotool type $(cat $cache | dmenu -l 8 -w $embed | sed "s|^~|$HOME|")
