@@ -24,16 +24,11 @@ set wildmenu          " Better completion menu
 set ignorecase        " Ignore case sensitive search
 set smartcase         " Overwrite 'ignorecase' if search has upper case chars
 set hlsearch          " Highlight search
-set ruler             " Show Position on the file
 set updatetime=300    " Swap write to disk delay
 set shortmess+=cfms   " Abbreviate some informations
-set fo-=cro           " Don't auto comment on new line
 set signcolumn=auto   " Automatic signs
 set cc=81             " Color Column
 set encoding=utf-8    " UTF-8 Encoding
-set termguicolors     " 24-bit RGB color
-" set noshowmode        " Don't show current mode in command line
-set background=dark   " DARK!
 set spl=en_us,pt_br   " Spell check English and Brazilian Portuguese
 set showtabline=2
 set shell=bash
@@ -86,14 +81,10 @@ autocmd FileType vim  setlocal ts=2
 autocmd FileType sh   setlocal ts=2
 autocmd FileType asm      setlocal ts=2
 autocmd FileType asm_ca65 setlocal ts=2
+autocmd FileType javascript setlocal ts=4
 
 noremap <leader>e :Fern %:h -drawer -toggle<CR>
 noremap <leader>s :setlocal spell!<CR>
-
-nnoremap <leader>b :buffers<CR>:buffer<Space>
-nnoremap <leader>bn :bn<CR>
-nnoremap <leader>bp :bp<CR>
-nnoremap <leader>bd :bd<CR>
 
 function! ToggleSearch()
 	if (@/ == '')
@@ -114,12 +105,6 @@ endif
 
 call plug#begin(stdpath('data') . '/plugged')
 
-" Zig
-Plug 'ziglang/zig.vim', { 'for': 'zig' }
-
-" Rust
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-
 " C Syntax
 Plug 'octol/vim-cpp-enhanced-highlight'
 
@@ -134,10 +119,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'morhetz/gruvbox'
 
 Plug 'maxbane/vim-asm_ca65'
-
-" " Airline
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
+Plug 'karolbelina/uxntal.vim'
 
 call plug#end()
 
