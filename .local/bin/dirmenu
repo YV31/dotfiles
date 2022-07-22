@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 exclude="\.git|\.librewolf|\.cache|\.ssh"
 
@@ -8,7 +8,11 @@ embed="${embed##* }"
 # Some what stolen from dmenu_path
 cachedir="${XDG_CACHE_HOME:-"$HOME/.cache"}"
 cache="$cachedir/dirmenu_cache"
+recent="$cachedir/dirmenu_recent"
 [ ! -e "$cachedir" ] && mkdir -p "$cachedir"
 
 [ $1 = "-u" ] && find ~ -type d | sed "s|^$HOME|~|" | grep -vE $exclude > $cache
-[ $1 = "-u" ] || xdotool type $(cat $cache | dmenu -l 8 -w $embed | sed "s|^~|$HOME|")
+[ $1 = "-u" ] ||
+	res=$(cat $recent $cache | dmenu -l 8 -w $embed)
+	echo $res > $recent
+	xdotool type $(echo $res | sed "s|^~|$HOME|")
