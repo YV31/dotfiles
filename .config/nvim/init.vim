@@ -1,5 +1,3 @@
-" vim: fdm=marker:
-
 "
 "  .__       .__  __         .__
 "  |__| ____ |__|/  |_ ___  _|__| _____
@@ -83,9 +81,6 @@ autocmd FileType asm      setlocal ts=2
 autocmd FileType asm_ca65 setlocal ts=2
 autocmd FileType javascript setlocal ts=4
 
-noremap <leader>e :Fern %:h -drawer -toggle<CR>
-noremap <leader>s :setlocal spell!<CR>
-
 function! ToggleSearch()
 	if (@/ == '')
 		let @/ = expand("<cword>")
@@ -94,18 +89,21 @@ function! ToggleSearch()
 	endif
 endfunction
 
-nnoremap <F3> :call ToggleSearch()<cr>
+nnoremap <F3> :call ToggleSearch()<CR>
+noremap <leader>e :Fern %:h -drawer -toggle<CR>
+noremap <leader>s :setlocal spell!<CR>
 
 " Ensure that plug.vim is installed
+let url = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
-	silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+	silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs'.url
 	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin(stdpath('data') . '/plugged')
 
-" C Syntax
+" Additional C-like highligting support
 Plug 'octol/vim-cpp-enhanced-highlight'
 
 " Fern
