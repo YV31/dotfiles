@@ -37,21 +37,21 @@ vim.opt.listchars   = { tab = '│ ' , trail = '~' }
 -- Who needs airline?
 function status()
   return ' %f %m%r%y '
-  .. (vim.opt.spell:get() and '[Spell (' 
+  .. (vim.opt.spell:get() and '[Spell ('
   .. vim.inspect(vim.opt.spelllang:get())
   .. ')]' or '')
   .. '%=(%l, %c) (0x%B) (%P) [%L] '
 end
 
-vim.opt.statusline='%!v:lua.status()'
+vim.opt.statusline = '%!v:lua.status()'
 
 vim.opt.writebackup = false -- Don't make backup
 vim.opt.backup      = false -- Don't keep backup
 
 -- Indentation
 vim.opt.smartindent = true
-vim.opt.et = false           -- Don't expand tabs
-vim.opt.shiftwidth=0 -- Default to tabstop
+vim.opt.expandtab   = false -- Don't expand tabs
+vim.opt.shiftwidth  = 0     -- Default to tabstop
 
 vim.g.mapleader = ' '
 
