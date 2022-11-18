@@ -1,0 +1,20 @@
+
+# Whitelist (Experimental)
+# Maybe this turns to be inconveniente, but seems like a good solution to not
+# adding unwanted files to the repo
+
+/*
+
+!.gitignore
+!.xinitrc
+!.bashrc
+!.bash_profile
+!.inputrc
+
+!.config/nvim/**
+!.config/fontconfig/**
+!.config/shell/**
+
+!.local/bin/dirmenu
+!.local/bin/status-bar
+!.local/bin/wp
