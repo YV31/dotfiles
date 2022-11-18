@@ -39,5 +39,27 @@ export XDG_CONFIG_DIRS="/etc/xdg"
 #
 
 # Clean up $HOME
+
+# gforth
 export GFORTHHIST="$XDG_DATA_HOME/gforth-history"
+
+# Go
+export GOPATH="$XDG_DATA_HOME/go"
+
+# TeX Live
+export TEXMFHOME="$XDG_DATA_HOME/texmf"
+export TEXMFVAR="$XDG_CACHE_HOME/texlive/texmf-var"
+export TEXMFCONFIG="$XDG_CONFIG_HOME/texlive/texmf-config"
+
+# Cargo
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+
+# Julia
+export JULIA_DEPOT_PATH="$XDG_DATA_HOME/julia:$JULIA_DEPOT_PATH"
+
+# Python
+
+# Puts '.python_history' somewhere else
+export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/startup.py"
+
 
