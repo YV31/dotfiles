@@ -11,10 +11,17 @@
 !.bash_profile
 !.inputrc
 
-!.config/nvim/**
-!.config/fontconfig/**
-!.config/shell/**
+!.config/
+.config/*
+!.config/nvim/
+!.config/fontconfig/
+!.config/shell/
+!.config/python/
 
+!.local/
+.local/*
+!local/bin/
+.local/bin/*
 !.local/bin/dirmenu
 !.local/bin/status-bar
 !.local/bin/wp

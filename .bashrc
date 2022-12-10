@@ -14,7 +14,7 @@ bind 'set show-mode-in-prompt on'
 bind 'set show-all-if-ambiguous on'
 bind 'TAB:menu-complete'
 
-alias la='ls -lah'
+alias la='ls -lAhX --group-directories-first'
 alias ls='ls --color=auto'
 alias neoc='neocities'
 alias shut='shutdown now'
