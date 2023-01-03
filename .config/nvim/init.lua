@@ -55,6 +55,8 @@ vim.opt.shiftwidth  = 0     -- Default to tabstop
 
 vim.g.mapleader = ' '
 
+vim.g.c_syntax_for_h = true
+
 vim.g.gruvbox_contrast_dark = 'hard'
 
 vim.cmd.colorscheme('gruvbox')
@@ -69,6 +71,7 @@ local typecmd = {
   asm  = [[ setlocal ts=2 ]],
   lua  = [[ setlocal ts=2 et ]],
   javascript = [[ setlocal ts=4 et ]],
+  markdown = [[ setlocal ts=4 et ]],
 }
 
 for filetype, cmd in pairs(typecmd) do
