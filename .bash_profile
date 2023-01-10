@@ -38,6 +38,8 @@ export XDG_CONFIG_DIRS="/etc/xdg"
 # Program specific
 #
 
+export EDITOR="nvim"
+
 # Clean up $HOME
 
 # gforth
