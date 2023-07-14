@@ -17,6 +17,6 @@ bind 'TAB:menu-complete'
 alias la='ls -lAhX --group-directories-first'
 alias ls='ls --color=auto'
 alias neoc='neocities'
-alias shut='shutdown now'
+alias shut='doas shutdown now'
 alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
 alias dof="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
