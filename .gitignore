@@ -13,6 +13,11 @@
 
 !.config/
 .config/*
+
+!.config/nvim/
+.config/nvim/*
+!.config/nvim/init.lua
+
 !.config/nvim/
 !.config/fontconfig/
 !.config/shell/
